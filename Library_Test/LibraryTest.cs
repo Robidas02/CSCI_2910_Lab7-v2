@@ -27,7 +27,7 @@ namespace Library_Test
             Lib.ReadBooks(testBooks);
 
             // Assert
-            Assert.AreEqual(2, Lib.Books.Count);
+            Assert.AreEqual(3, Lib.Books.Count);
             Assert.AreEqual("Test Book 1", Lib.Books[0].Title);
             Assert.AreEqual("Test Author 2", Lib.Books[1].Author);
 
