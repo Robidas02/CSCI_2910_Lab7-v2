@@ -24,7 +24,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore NuGet packages
-      run: dotnet restore ${{ env.Solution_Name }} --verbosity detailed
+      run: dotnet restore Lab5_Library.sln
 
     - name: Build solution
       run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore --verbosity detailed
