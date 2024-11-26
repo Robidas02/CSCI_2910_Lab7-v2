@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Lab5_Library.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Lab5_Library.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab5_Library.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Lab5_Library.props",
+      "PackagePath": "build\\Lab5_Library.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Lab5_Library.props",
+      "PackagePath": "buildMultiTargeting\\Lab5_Library.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Lab5_Library.props",
+      "PackagePath": "buildTransitive\\Lab5_Library.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

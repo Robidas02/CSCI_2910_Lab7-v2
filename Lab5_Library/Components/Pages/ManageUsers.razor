@@ -1,0 +1,217 @@
+﻿@page "/users"
+@using Lab5_Library.Models
+@using Lab5_Library.Services
+@inject ILibraryService Lib
+@inject NavigationManager Nav
+<h3>Manage Users</h3>
+
+<ol>
+    <li><button class="btn btn-primary" @onclick="SetAddUser">Add User</button></li>
+    <li><button class="btn btn-primary" @onclick="SetEditUser">Edit User</button></li>
+    <li><button class="btn btn-primary" @onclick="SetDeleteUser">Delete User</button></li>
+    <li><button class="btn btn-primary" @onclick="SetReadUsers">List Users</button></li>
+    <li><button class="btn btn-primary" @onclick="ReturnToPreviousMenu">Back</button></li>
+</ol>
+
+<br />
+<br />
+<br />
+@if (Lib.Users.Count != null && listUsers == true)
+{
+    <h2>List of Users</h2>
+    foreach (User user in Lib.Users)
+    {
+        <span>@user.Id - @user.Name -- @user.Email</span>
+        <br />
+    }
+}
+@if (addUsers == true)
+{
+    <h2>Add a User</h2>
+    <span>Please fill in each field and then click the 'Submit' button.</span>
+    <br />
+    <label>Please enter the user's name.</label>
+    <input @bind="Name" />
+    <br />
+    <label>Please enter the user's email.</label>
+    <input @bind="Email" />
+    <br />
+
+    <button @onclick="() => Lib.AddUser(Name, Email, url)">Submit</button>
+
+    @if (!string.IsNullOrEmpty(@Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+}
+@if (editUsers == true)
+{
+    <h2>Edit a User</h2>
+    <p>Please enter the id of the user you'd like to edit. Then click the 'Submit' button.</p>
+    <br />
+    <p>Users are listed below.</p>
+
+    if (Lib.UserFound == false)
+    {
+        <label>User ID: </label>
+        <input type="number" @bind="userID" />
+        <br />
+        <button @onclick="CheckUser">Submit</button>
+    }
+
+    if (Lib.UserFound == true)
+    {
+        <span>Old User Name: @oldName</span>
+        <br />
+        <span>Old User Email: @oldEmail</span>
+        <br />
+        <br />
+
+        <span>Enter the new values in the field below. Click the 'Confirm' button when finished.</span>
+        <br />
+
+        <label>New Name</label>
+        <input @bind="newName" />
+        <br />
+        <label>New Email</label>
+        <input @bind="newEmail" />
+        <br />
+        <br />
+        <br />
+
+        <button @onclick="() => Lib.EditUser(newName, newEmail, userToEdit, url)">Confirm</button>
+
+    }
+
+    @if (!string.IsNullOrEmpty(Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p>@message</p>
+    }
+
+
+    <br />
+    <br />
+    <h2>List of Users</h2>
+    foreach (User user in Lib.Users)
+    {
+        <span>@user.Id - @user.Name -- @user.Email</span>
+        <br />
+    }
+}
+@if (deleteUsers == true)
+{
+    <h2>Delete a User</h2>
+    <p>Please enter the id of the user you'd like to delete. Then click the 'Submit' button.</p>
+    <br />
+    <p>Users are listed below.</p>
+
+    <label>User ID: </label>
+    <input type="number" @bind="userID" />
+    <br />
+    <button @onclick="() => Lib.DeleteUser(userID, url)">Submit</button>
+
+    if (!string.IsNullOrEmpty(Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+
+    <br />
+    <br />
+    <h2>List of Users</h2>
+    foreach (User user in Lib.Users)
+    {
+        <span>@user.Id - @user.Name -- @user.Email</span>
+        <br />
+    }
+}
+
+@code {
+    // Have a bool for each of the buttons to make the content of each function appear and disappear only when that function is active.
+    // If the user clicks Add Users after already clicking List Users,
+    // we don't want both items to appear, we want only the most recently chosen option.
+    bool listUsers = false;
+    bool addUsers = false;
+    bool editUsers = false;
+    bool deleteUsers = false;
+
+    // Variables for adding a user
+    private string Name { get; set; }
+    private string Email { get; set; }
+    string message { get; set; }
+    private string url = "./Data/Users.csv";
+
+    // Variables for editing a user
+    private string newName { get; set; }
+    private string newEmail { get; set; }
+
+    void SetReadUsers()
+    {
+        listUsers = true;
+        addUsers = false;
+        editUsers = false;
+        deleteUsers = false;
+    }
+
+    void SetAddUser()
+    {
+        listUsers = false;
+        addUsers = true;
+        editUsers = false;
+        deleteUsers = false;
+    }
+
+    void SetEditUser()
+    {
+        listUsers = false;
+        addUsers = false;
+        editUsers = true;
+        deleteUsers = false;
+    }
+
+    private int userID { get; set; }
+    private bool userFound = false;
+    private User userToEdit { get; set; }
+    private string oldName { get; set; }
+    private string oldEmail { get; set; }
+
+    async Task CheckUser()
+    {
+        message = string.Empty;
+
+        userToEdit = Lib.Users.FirstOrDefault(b => b.Id == userID);
+
+        oldName = userToEdit.Name;
+        oldEmail = userToEdit.Email;
+
+        if (userToEdit != null)
+        {
+            Lib.UserFound = true;
+
+        }
+        else
+        {
+            message = "There is no user with that ID.";
+        }
+    }
+
+    void SetDeleteUser()
+    {
+        listUsers = false;
+        addUsers = false;
+        editUsers = false;
+        deleteUsers = true;
+    }
+
+    private User userToDelete { get; set; }
+
+
+    void ReturnToPreviousMenu()
+    {
+        Nav.NavigateTo("/");
+    }
+}

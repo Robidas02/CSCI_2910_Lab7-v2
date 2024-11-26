@@ -1,0 +1,27 @@
+﻿@page "/books/borrow/list"
+@using Lab5_Library.Models;
+@using Lab5_Library.Services;
+@inject ILibraryService Lib;
+@inject NavigationManager Nav;
+
+<h2>List of Borrowed Books</h2>
+
+@if (Lib.BorrowedBooks.Count > 0)
+{
+    @foreach (var user in Lib.BorrowedBooks)
+    {
+        <h5>User: @user.Key.Name</h5>
+        <br />
+        <h6>Borrowed Books</h6>
+        @foreach (var book in user.Value)
+        {
+            <span>@book.Id - @book.Title by @book.Author (ISBN: @book.ISBN)</span>
+            <br />
+        }
+        <p>--------------------------------------------------</p>
+    }
+}
+
+@code {
+
+}

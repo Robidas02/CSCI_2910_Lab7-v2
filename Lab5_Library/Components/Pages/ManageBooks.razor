@@ -1,0 +1,208 @@
+﻿@page "/books"
+@using Lab5_Library.Models
+@using Lab5_Library.Services
+@inject ILibraryService Lib
+@inject NavigationManager Nav
+<h3>ManageBooks</h3>
+
+<ol>
+    <li><button class="btn btn-primary" @onclick="SetAddBook">Add Book</button></li>
+    <li><button class="btn btn-primary" @onclick="SetEditBook">Edit Book</button></li>
+    <li><button class="btn btn-primary" @onclick="SetDeleteBook">Delete Book</button></li>
+    <li><button class="btn btn-primary" @onclick="SetReadBooks">List Books</button></li>
+    <li><button class="btn btn-primary" @onclick="ReturnToPreviousMenu">Back</button></li>
+</ol>
+
+<br />
+<br />
+<br />
+@if (Lib.Books.Count != null && listBooks == true)
+{
+    <h2>List of Books</h2>
+    foreach(Book book in Lib.Books)
+    {
+        <span>@book.Id - @book.Title by @book.Author - @book.ISBN</span> <br />
+    }
+}
+@if (addBooks == true)
+{
+    <h2>Add a Book</h2>
+    <span>Please fill in each field and then click the 'Submit' button.</span> <br />
+    <label>Please enter the book title.</label>
+    <input @bind="Title"/> <br />
+    <label>Please enter the book author.</label>
+    <input @bind="Author"/> <br />
+    <label>Please enter the book ISBN.</label>
+    <input @bind="ISBN"/> <br />
+    
+    <button @onclick="() => Lib.AddBook(Title, Author, ISBN, url)">Submit</button>
+
+    @if(!string.IsNullOrEmpty(@Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+}
+@if (editBooks == true)
+{
+    <h2>Edit a Book</h2>
+    <p>Please enter the id of the book you'd like to edit. Then click the 'Submit' button.</p><br />
+    <p>Books are listed below.</p>
+
+    if (Lib.BookFound == false)
+    {
+        <label>Book ID: </label>
+        <input type="number" @bind="bookID" /> <br />
+        <button @onclick="CheckBook">Submit</button>
+    }
+
+    if (Lib.BookFound == true)
+    {
+        <span>Old Book Title: @oldTitle</span><br />
+        <span>Old Book Author: @oldAuthor</span><br />
+        <span>Old Book ISBN: @oldISBN</span><br /><br />
+
+        <span>Enter the new values in the field below. Click the 'Confirm' button when finished.</span> <br />
+
+        <label>New Title</label>
+        <input @bind="newTitle"/><br />
+        <label>New Author</label>
+        <input @bind="newAuthor"/><br />
+        <label>New ISBN</label>
+        <input @bind="newISBN"/><br /><br /><br />
+
+        <button @onclick="() => Lib.EditBook(newTitle, newAuthor, newISBN, bookToEdit, url)">Confirm</button>
+
+    }
+
+    @if (!string.IsNullOrEmpty(Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p>@message</p>
+    }
+
+
+    <br />
+    <br />
+    <h2>List of Books</h2>
+    foreach (Book book in Lib.Books)
+    {
+        <span>@book.Id - @book.Title by @book.Author - @book.ISBN</span>
+        <br />
+    }
+}
+@if (deleteBooks == true)
+{
+    <h2>Delete a Book</h2>
+    <p>Please enter the id of the book you'd like to delete. Then click the 'Submit' button.</p>
+    <br />
+    <p>Books are listed below.</p>
+
+    <label>Book ID: </label>
+    <input type="number" @bind="bookID" />
+    <br />
+    <button @onclick="() => Lib.DeleteBook(bookID, url)">Submit</button>
+
+    if (!string.IsNullOrEmpty(Lib.Message))
+    {
+        <p>@Lib.Message</p>
+    }
+
+    <br />
+    <br />
+    <h2>List of Books</h2>
+    foreach (Book book in Lib.Books)
+    {
+        <span>@book.Id - @book.Title by @book.Author (ISBN: @book.ISBN)</span>
+        <br />
+    }
+}
+
+@code {
+    // Have a bool for each of the buttons to make the content of each function appear and disappear only when that function is active.
+    // If the user clicks Add Books after already clicking List Books, 
+    // we don't want both items to appear, we want only the most recently chosen option.
+    bool listBooks = false;
+    bool addBooks = false;
+    bool editBooks = false;
+    bool deleteBooks = false;
+
+    // Variables for adding a new book
+    private string Title { get; set; }
+    private string Author { get; set; }
+    private string ISBN { get; set; }
+    string message { get; set; }
+    private string url = "./Data/Books.csv";
+
+    // Variables for editing a book
+    private string newTitle { get; set; }
+    private string newAuthor { get; set; }
+    private string newISBN { get; set; }
+
+    void SetReadBooks()
+    {
+        listBooks = true;
+        addBooks = false;
+        editBooks = false;
+        deleteBooks = false;
+    }
+
+    void SetAddBook()
+    {
+        listBooks = false;
+        addBooks = true;
+        editBooks = false;
+        deleteBooks = false;
+    }
+
+    void SetEditBook()
+    {
+        listBooks = false;
+        addBooks = false;
+        editBooks = true;
+        deleteBooks = false;
+    }
+
+    private int bookID { get; set; }
+    private Book bookToEdit { get; set; }
+    private string oldTitle { get; set; }
+    private string oldAuthor { get; set; }
+    private string oldISBN { get; set; }
+
+    async Task CheckBook()
+    {
+        message = string.Empty;
+        bookToEdit = Lib.Books.FirstOrDefault(b => b.Id == bookID);
+
+        oldTitle = bookToEdit.Title;
+        oldAuthor = bookToEdit.Author;
+        oldISBN = bookToEdit.ISBN;
+
+        if (bookToEdit != null)
+        {
+            Lib.BookFound = true;
+
+        }
+        else
+        {
+            message = "There is no book with that ID.";
+        }
+    }
+
+    void SetDeleteBook()
+    {
+        listBooks = false;
+        addBooks = false;
+        editBooks = false;
+        deleteBooks = true;
+    }
+
+    private Book bookToDelete { get; set; }
+
+    void ReturnToPreviousMenu()
+    {
+        Nav.NavigateTo("/");
+    }
+}

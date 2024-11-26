@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\lab5_library\\data\\users.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|solutionrelative:data\\users.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\lab5_library\\components\\pages\\manageusers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|solutionrelative:components\\pages\\manageusers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\lab5_library\\services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|solutionrelative:services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\lab5_library\\services\\ilibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|solutionrelative:services\\ilibraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\lab5_library\\components\\pages\\managebooks.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A2450C7-48B5-4855-B3D0-173B96F3710D}|Lab5_Library.csproj|solutionrelative:components\\pages\\managebooks.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A94C8F5-3043-4E42-9608-EFD3E8CC49E3}|..\\Library_Test\\Lab6_Library_Test.csproj|c:\\users\\jmrob_dhun93a\\onedrive - east tennessee state university\\fall 2024\\csci 2910 server side programming\\labs\\lab 5\\library_test\\librarytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Users.csv",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Data\\Users.csv",
+              "RelativeDocumentMoniker": "Data\\Users.csv",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Data\\Users.csv",
+              "RelativeToolTip": "Data\\Users.csv",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGMAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2024-11-20T02:32:54.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LibraryTest.cs",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Library_Test\\LibraryTest.cs",
+              "RelativeDocumentMoniker": "..\\Library_Test\\LibraryTest.cs",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Library_Test\\LibraryTest.cs",
+              "RelativeToolTip": "..\\Library_Test\\LibraryTest.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAgwFAAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:41:47.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ILibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Services\\ILibraryService.cs",
+              "RelativeDocumentMoniker": "Services\\ILibraryService.cs",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Services\\ILibraryService.cs",
+              "RelativeToolTip": "Services\\ILibraryService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAA/wCMAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T20:13:23.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Services\\LibraryService.cs",
+              "RelativeDocumentMoniker": "Services\\LibraryService.cs",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Services\\LibraryService.cs",
+              "RelativeToolTip": "Services\\LibraryService.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAAA1wNsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T20:13:38.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManageBooks.razor",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Components\\Pages\\ManageBooks.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ManageBooks.razor",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Components\\Pages\\ManageBooks.razor",
+              "RelativeToolTip": "Components\\Pages\\ManageBooks.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T20:00:09.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManageUsers.razor",
+              "DocumentMoniker": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Components\\Pages\\ManageUsers.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ManageUsers.razor",
+              "ToolTip": "C:\\Users\\jmrob_dhun93a\\OneDrive - East Tennessee State University\\Fall 2024\\CSCI 2910 Server Side Programming\\Labs\\Lab 5\\Lab5_Library\\Components\\Pages\\ManageUsers.razor",
+              "RelativeToolTip": "Components\\Pages\\ManageUsers.razor",
+              "ViewState": "AQIAADkAAAAAAAAAAAAmwFEAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T19:58:12.91Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

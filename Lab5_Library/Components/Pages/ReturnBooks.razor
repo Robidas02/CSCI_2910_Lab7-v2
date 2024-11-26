@@ -1,0 +1,47 @@
+﻿@page "/books/return"
+@using Lab5_Library.Models;
+@using Lab5_Library.Services;
+@inject ILibraryService Lib;
+@inject NavigationManager Nav;
+
+<h3>Return Books</h3>
+
+<p>Please enter the ID of the user you'd like to return the book for.</p>
+<label>User ID: </label>
+<input type="number" @bind="userId"/>
+<br />
+<br />
+
+<label>Book ID: </label>
+<input type="number" @bind="bookId"/>
+<br />
+<br />
+
+<button @onclick="() => Lib.ReturnBook(userId, bookId)">Submit</button>
+
+@if(!string.IsNullOrEmpty(Lib.Message))
+{
+    <p>@Lib.Message</p>
+}
+
+<h2>List of Borrowed Books</h2>
+@if (Lib.BorrowedBooks.Count > 0)
+{
+    @foreach (var user in Lib.BorrowedBooks)
+    {
+        <h5>User: @user.Key.Name</h5>
+        <br />
+        <h6>Borrowed Books</h6>
+        @foreach (var book in user.Value)
+        {
+            <span>@book.Id - @book.Title by @book.Author - @book.ISBN</span>
+            <br />
+        }
+        <p>--------------------------------------------------</p>
+    }
+}
+
+@code {
+    private int userId { get; set; }
+    private int bookId { get; set; }
+}

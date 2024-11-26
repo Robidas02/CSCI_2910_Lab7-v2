@@ -1,0 +1,70 @@
+﻿@page "/books/borrow"
+@using Lab5_Library.Models;
+@using Lab5_Library.Services;
+@inject ILibraryService Lib;
+@inject NavigationManager Nav;
+
+<style>
+    .double_List {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    double_List div {
+        padding: 10px;
+    }
+</style>
+
+<h2>Borrow a Book</h2>
+<p>Please eneter the id of the book being borrowed and the id of the person who is borrowing it.</p> <br />
+<p>When you are done, click the 'Submit' button.</p> <br />
+<p>Books and Users are listed below</p>
+
+<label>Book ID: </label>
+<input type="number" @bind="bookID" />
+<br />
+<br />
+
+<label>User ID: </label>
+<input type="number" @bind="userID" />
+<br />
+<br />
+
+<button @onclick="() => Lib.BorrowBook(bookID, userID)">Submit</button>
+
+@if(!string.IsNullOrEmpty(Lib.Message))
+{
+    <p>@Lib.Message</p>
+}
+
+<h2>List of Books and Users</h2>
+<div class="double_List">
+    <div>
+        <h4>Books</h4>
+            @foreach(Book book in Lib.Books)
+            {
+                <span>@book.Id - @book.Title by @book.Author (ISBN: @book.ISBN)</span>
+                <br />
+            }
+    </div>
+    <div>
+        <h4>Users</h4>
+            @foreach(User user in Lib.Users)
+            {
+                <span>@user.Id - @user.Name -- @user.Email</span>
+                <br />
+            }
+    </div>
+</div>
+
+
+
+
+
+
+@code {
+    private int bookID { get; set; }
+    private int userID { get; set; }
+}
+}

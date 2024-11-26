@@ -1,0 +1,59 @@
+﻿@* 
+    Link to the ChatGPT log that I used for this lab:
+    https://chatgpt.com/share/673bc0ca-9444-8002-b979-3a298e68deb0
+*@
+@page "/"
+@using Lab5_Library.Models;
+@using Lab5_Library.Services;
+@inject NavigationManager Nav
+@inject ILibraryService Lib
+
+
+<h2>Library Management System</h2>
+
+
+<h3>Please choose one of the following options.</h3>
+<ol>
+    <li><button class="btn btn-primary" @onclick="ManageBooksClicked">Manage Books</button></li>
+    <li><button class="btn btn-primary" @onclick="ManageUsersClicked">Manage Users</button></li>
+    <li><button class="btn btn-primary" @onclick="BorrowBooksClicked">Borrow Book</button></li>
+    <li><button class="btn btn-primary" @onclick="ReturnBooksClicked">Return Book</button></li>
+    <li><button class="btn btn-primary" @onclick="ListBorrowedBooksClicked">List Borrowed Books</button></li>
+    <li><button class="btn btn-primary">Quit</button></li>
+</ol>
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        Lib.ReadBooks("./Data/Books.csv");
+        Lib.ReadUsers("./Data/Users.csv");
+    }
+
+    // Can make a switch statement to select which menu to navigate to instead of having a separate method for each.
+
+    private void ManageBooksClicked()
+    {
+        Nav.NavigateTo("/books");
+    }
+
+    private void ManageUsersClicked()
+    {
+        Nav.NavigateTo("/users");
+    }
+
+    private void BorrowBooksClicked()
+    {
+        Nav.NavigateTo("/books/borrow");
+    }
+
+    private void ReturnBooksClicked()
+    {
+        Nav.NavigateTo("/books/return");
+    }
+
+    private void ListBorrowedBooksClicked()
+    {
+        Nav.NavigateTo("/books/borrow/list");
+    }
+}
