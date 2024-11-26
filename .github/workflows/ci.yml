@@ -12,7 +12,7 @@ jobs:
 
     env:
       Solution_Name: Lab6_Library_Test.sln
-      Test_Project_Path: Lab6_Library_Test/Lab6_Library_Test.csproj
+      Test_Project_Path: Library_Test/Lab6_Library_Test.csproj
 
     steps:
     - name: Checkout repository
