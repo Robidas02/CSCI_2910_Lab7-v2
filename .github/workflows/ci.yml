@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Solution_Name: Lab5_Library.sln
+      Solution_Name: Lab5_Library/Lab5_Library.sln
       Test_Project_Path: Library_Test/Lab6_Library_Test.csproj
 
     steps:
