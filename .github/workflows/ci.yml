@@ -1,0 +1,33 @@
+name: .NET CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    env:
+      Solution_Name: Lab6_Library_Test.sln
+      Test_Project_Path: Lab6_Library_Test/Lab6_Library_Test.csproj
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore NuGet packages
+      run: dotnet restore ${{ env.Solution_Name }} --verbosity detailed
+
+    - name: Build solution
+      run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore --verbosity detailed
+
+    - name: Run tests
+      run: dotnet test ${{ env.Test_Project_Path }} --no-restore --verbosity normal
