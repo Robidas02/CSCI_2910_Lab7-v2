@@ -12,13 +12,16 @@ jobs:
 
     env:
       Solution_Name: Lab5_Library.sln
-      Test_Project_Path: ..\Library_Test\Lab6_Library_Test.csproj
+      Test_Project_Path: Library_Test/Lab6_Library_Test.csproj
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-          fetch-depth: 0
+        fetch-depth: 0
+
+    - name: List directory contents
+      run: ls -R
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -26,7 +29,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore NuGet packages
-      run: dotnet restore Lab5_Library.sln --verbosity detailed
+      run: dotnet restore ${{ env.Solution_Name }} --verbosity detailed
 
     - name: Build solution
       run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore --verbosity detailed
