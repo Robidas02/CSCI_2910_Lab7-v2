@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+          fetch-depth: 0
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -24,7 +26,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore NuGet packages
-      run: dotnet restore Lab5_Library.sln
+      run: dotnet restore Lab5_Library.sln --verbosity detailed
 
     - name: Build solution
       run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore --verbosity detailed
